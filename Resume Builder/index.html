@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- FORM -->
+        <div class="form" <h2>Resume Builder</h2>
+
+            <input type="file" id="image">
+
+            <input type="text" id="name" placeholder="Full Name" oninput="updateResume()">
+            <input type="text" id="title" placeholder="Job Title" oninput="updateResume()">
+
+            <textarea id="summary" placeholder="Summary" oninput="updateResume()"></textarea>
+            <textarea id="skills" placeholder="Skills (comma separated)" oninput="updateResume()"></textarea>
+            <textarea id="education" placeholder="Education" oninput="updateResume()"></textarea>
+            <textarea id="experience" placeholder="Experience" oninput="updateResume()"></textarea>
+
+            <button onclick="downloadPDF()">Download PDF</button>
+        </div>
+
+        <!-- PREVIEW -->
+        <div class="preview" id="resume">
+
+            <div class="header">
+                <img id="p_image" src="https://via.placeholder.com/80">
+                <div>
+                    <h1 id="p_name">Your Name</h1>
+                    <h3 id="p_title">Your Title</h3>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Summary</h2>
+                <p id="p_summary"></p>
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <ul id="p_skills"></ul>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <p id="p_education"></p>
+            </div>
+
+            <div class="section">
+                <h2>Experience</h2>
+                <p id="p_experience"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
